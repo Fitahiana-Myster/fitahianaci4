@@ -599,7 +599,7 @@
           </div>
 
           <!-- Mahavelona  style="display: none;"-->
-          <div class="row" style="display: none;" id="Mahavelona">
+          <div class="row" style="display: none;" id="Mahavelonax">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">

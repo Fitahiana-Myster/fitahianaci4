@@ -15,7 +15,7 @@
               <select name="kaominina" id="kaominina" class="form-control">
                   <option value="">- Misafidy -</option>
                   <?php foreach($kaominina as $row):?>
-                      <option value="<?= $row->codek;?>"><?= $row->codek . "-" .$row->nom;?></option>
+                      <option value="<?= $row->id;?>"><?= $row->codek . "-" .$row->nom;?></option>
                   <?php endforeach;?>
               </select>
             </div>
@@ -36,7 +36,7 @@
           <div class="row">
             <div class="form-group col-md-4">
               <label>Laharana tokan-trano (menage):</label>
-              <input type="text" name="laharana_tokan_trano" class="form-control" id="laharana_tokan_trano">
+              <input type="text" name="laharana_tokan_trano"  class="form-control" id="laharana_tokan_trano">
             </div>
             <div class="form-group col-md-2">
               <label>Laharana:</label>

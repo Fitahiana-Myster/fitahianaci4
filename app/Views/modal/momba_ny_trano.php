@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
           <!-- Ambatolampy tsimahafotsy style="display: none;"-->
-          <div class="row" style="display: none;" id="Ambatolampy">
+          <div class="row Ambatolampy" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <!-- Ambatomirahavavy style="display: none;"-->
-          <div class="row" style="display: none;" id="Ambatomirahavavy">
+          <div class="row Ambatomirahavavy" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -62,7 +62,7 @@
           </div>
 
           <!-- Amboanana style="display: none;"-->
-          <div class="row" style="display: none;" id="Amboanana">
+          <div class="row Amboanana" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -91,7 +91,7 @@
           </div>
 
           <!-- Ambohimandry style="display: none;"-->
-          <div class="row" style="display: none;" id="Ambohimandry">
+          <div class="row Ambohimandry" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -113,7 +113,7 @@
             </div>
           </div>
           <!-- Ambohimiadana style="display: none;"-->
-          <div class="row" style="display: none;" id="Ambohimiadana">
+          <div class="row Ambohimiadana" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -160,7 +160,7 @@
           </div>
 
           <!-- Ambohitrambo style="display: none;"-->
-          <div class="row" style="display: none;" id="Ambohitrambo">
+          <div class="row Ambohitrambo" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -179,7 +179,7 @@
           </div>
 
           <!-- Ambohitromby style="display: none;"-->
-          <div class="row" style="display: none;" id="Ambohitromby">
+          <div class="row Ambohitromby" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -205,7 +205,7 @@
             </div>
           </div>
           <!-- Ampahimanga style="display: none;"-->
-          <div class="row" style="display: none;" id="Ampahimanga">
+          <div class="row Ampahimanga" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -232,7 +232,7 @@
           </div>
 
           <!-- Ampanotokana style="display: none;"-->
-          <div class="row" style="display: none;" id="Ampanotokana">
+          <div class="row Ampanotokana" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -263,7 +263,7 @@
           </div>
 
           <!-- Andramasina style="display: none;"-->
-          <div class="row" style="display: none;" id="Andramasina">
+          <div class="row Andramasina" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -310,7 +310,7 @@
           </div>
 
           <!-- Antanetibe Anativolo style="display: none;"-->
-          <div class="row" style="display: none;" id="Antanetibe_a">
+          <div class="row Antanetibe_a" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -333,7 +333,7 @@
           </div>
 
           <!-- Antanetibe Mahazaza style="display: none;"-->
-          <div class="row" style="display: none;" id="Antanetibe_m">
+          <div class="row Antanetibe_m" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -372,7 +372,7 @@
           </div>
 
           <!-- Antsahafilo style="display: none;"-->
-          <div class="row" style="display: none;" id="Antsahafilo">
+          <div class="row Antsahafilo" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -399,7 +399,7 @@
           </div>
 
           <!-- Arivonimamo 1 style="display: none;"-->
-          <div class="row" style="display: none;" id="Arivonimamo_1">
+          <div class="row Arivonimamo_1" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -448,7 +448,7 @@
           </div>
 
           <!-- Arivonimamo 2 style="display: none;"-->
-          <div class="row" style="display: none;" id="Arivonimamo_2">
+          <div class="row Arivonimamo_2" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -471,7 +471,7 @@
           </div>
 
           <!-- Avaratsena  style="display: none;"-->
-          <div class="row" style="display: none;" id="Avaratsena">
+          <div class="row Avaratsena" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -498,7 +498,7 @@
           </div>
 
           <!-- Betatao  style="display: none;"-->
-          <div class="row" style="display: none;" id="Betatao">
+          <div class="row Betatao" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -517,7 +517,7 @@
           </div>
 
           <!-- Fihaonana  style="display: none;"-->
-          <div class="row" style="display: none;" id="Fihaonana">
+          <div class="row Fihaonana" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -556,7 +556,7 @@
           </div>
 
           <!-- Imerintsiatosika  style="display: none;"-->
-          <div class="row" style="display: none;" id="Imerintsiatosika">
+          <div class="row Imerintsiatosika" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -599,7 +599,7 @@
           </div>
 
           <!-- Mahavelona  style="display: none;"-->
-          <div class="row" style="display: none;" id="Mahavelona">
+          <div class="row Mahavelona" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -630,7 +630,7 @@
           </div>
 
           <!-- Miantso  style="display: none;"-->
-          <div class="row" style="display: none;" id="Miantso">
+          <div class="row Miantso" style="display: none;" id="">
             <div class="form-group col-md-2">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">
@@ -657,7 +657,7 @@
           </div>
 
           <!-- Morarano  style="display: none;"-->
-          <div class="row">
+          <div class="row" style="display: none;">
             <div class="form-group col-md-2" id="Morarano">
               <label>Mihofa</label>
               <input class="form-check-input" type="checkbox" value="Vita Kadasitra" id="latsaka_ny_20_ora">

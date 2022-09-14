@@ -14,7 +14,7 @@
                 <select name="kaominina" id="kaominina2" class="form-control">
                     <option value="">- Misafidy -</option>
                     <?php foreach($kaominina as $row):?>
-                        <option value="<?= $row->codek;?>"><?= $row->codek . "-" .$row->nom;?></option>
+                        <option value="<?= $row->id;?>"><?= $row->codek . "-" .$row->nom;?></option>
                     <?php endforeach;?>
                 </select>
             </div>

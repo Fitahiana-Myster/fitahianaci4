@@ -61,6 +61,33 @@ class Code_controller extends Controller
 		  return $model->liste_vhtr($codefkt, $codek);
 		}
 
+    public function tompony_add(){
+      $nom = $_POST['nom'];
+			$date_n = $_POST['date_n'];
+			$lieu_n = $_POST['lieu_n'];
+			$adresse = $_POST['adresse'];
+			$tel = $_POST['tel'];
+			$genre = $_POST['genre'];
+			$cin = $_POST['cin'];
+			$date_d_cin = $_POST['date_d_cin'];
+			$tao = $_POST['tao'];
+      $model = new Code_model();
+      foreach ($nom as $i => $value) {
+        $nom = $value;
+        $date_n = $date_n[$i];
+        $lieu_n = $lieu_n[$i];
+        $adresse = $adresse[$i];
+        $tel = $tel[$i];
+        $genre = $genre[$i];
+        $cin = $cin[$i];
+        $date_d_cin = $date_d_cin[$i];
+        $tao = $tao[$i];
+
+        $data = $model->tompony_add($nom,$date_n,$lieu_n,$adresse,$tel,$genre,$cin,$date_d_cin,$tao);
+       echo json_encode($data);
+      }
+    }
+
     public function save()
     {
         $model = new Code_model();
@@ -71,37 +98,80 @@ class Code_controller extends Controller
         $laharana = $this->request->getPost('laharana');
         $codet=$kaominina."-".$fokontany."-".$vohitra."-".$laharana_tokan_trano;
         $codel=$kaominina."-".$fokontany."-".$vohitra."-".$laharana;
-// raha laharana_tokan_trano
-        if ($this->request->getPost('laharana_tokan_trano'))
-        {
-          $data1 = array(
-              'code2'        => $codet,
-              'kaominina'       => $this->request->getPost('kaominina'),
-              'fokontany' => $this->request->getPost('fokontany'),
-              'vohitra'        => $this->request->getPost('vohitra'),
-              'laharana_tokan_trano'       => $this->request->getPost('laharana_tokan_trano'),
-              'laharana' => $this->request->getPost('laharana'),
-              'plof'       => $this->request->getPost('plof'),
-              'lot' => $this->request->getPost('lot'),
-              // 'mpanao_saisi' => $this->request->getPost('mpanao_saisi'),
-          );
-        }
-        // raha laharana
-        else {
-          $data1 = array(
-              'code2'        => $codel,
-              'kaominina'       => $this->request->getPost('kaominina'),
-              'fokontany' => $this->request->getPost('fokontany'),
-              'vohitra'        => $this->request->getPost('vohitra'),
-              'laharana_tokan_trano'       => $this->request->getPost('laharana_tokan_trano'),
-              'laharana' => $this->request->getPost('laharana'),
-              'plof'       => $this->request->getPost('plof'),
-              'lot' => $this->request->getPost('lot'),
-              // 'mpanao_saisi' => $this->request->getPost('mpanao_saisi'),
-          );
-        }
-        $data = $model->saveCode($data1);
-       echo json_encode($data);
+
+          $data2 = $model->if_existe($codet,$codel);
+          foreach ($data2->getResult() as $row) {
+              $isa=$row->code2;
+          }
+          // $isa2=print_r($isa);die();
+          // echo json_encode($data->getResult());die();
+          if ($isa>0) {
+            $data="Efa misy io code parcel io";
+          echo json_encode($data);
+          }
+          else {
+            // raha laharana_tokan_trano
+                    if ($this->request->getPost('laharana_tokan_trano'))
+                    {
+                      if ($this->request->getPost('vohitra')=="") {
+                        $data1 = array(
+                            'code2'        => $codet,
+                            'kaominina'       => $this->request->getPost('kaominina'),
+                            'fokontany' => $this->request->getPost('fokontany'),
+                            'vohitra'        => 44,
+                            'laharana_tokan_trano'       => $this->request->getPost('laharana_tokan_trano'),
+                            'laharana' => $this->request->getPost('laharana'),
+                            'plof'       => $this->request->getPost('plof'),
+                            'lot' => $this->request->getPost('lot'),
+                            // 'mpanao_saisi' => $this->request->getPost('mpanao_saisi'),
+                        );
+                      }
+                      else {
+                        $data1 = array(
+                            'code2'        => $codet,
+                            'kaominina'       => $this->request->getPost('kaominina'),
+                            'fokontany' => $this->request->getPost('fokontany'),
+                            'vohitra'        => $this->request->getPost('vohitra'),
+                            'laharana_tokan_trano'       => $this->request->getPost('laharana_tokan_trano'),
+                            'laharana' => $this->request->getPost('laharana'),
+                            'plof'       => $this->request->getPost('plof'),
+                            'lot' => $this->request->getPost('lot'),
+                            // 'mpanao_saisi' => $this->request->getPost('mpanao_saisi'),
+                        );
+                      }
+                    }
+                    // raha laharana
+                    else {
+                      if ($this->request->getPost('vohitra')=="") {
+                      $data1 = array(
+                          'code2'        => $codel,
+                          'kaominina'       => $this->request->getPost('kaominina'),
+                          'fokontany' => $this->request->getPost('fokontany'),
+                          'vohitra'        => 44,
+                          'laharana_tokan_trano'       => $this->request->getPost('laharana_tokan_trano'),
+                          'laharana' => $this->request->getPost('laharana'),
+                          'plof'       => $this->request->getPost('plof'),
+                          'lot' => $this->request->getPost('lot'),
+                          // 'mpanao_saisi' => $this->request->getPost('mpanao_saisi'),
+                      );
+                      }
+                      else {
+                      $data1 = array(
+                          'code2'        => $codel,
+                          'kaominina'       => $this->request->getPost('kaominina'),
+                          'fokontany' => $this->request->getPost('fokontany'),
+                          'vohitra'        => $this->request->getPost('vohitra'),
+                          'laharana_tokan_trano'       => $this->request->getPost('laharana_tokan_trano'),
+                          'laharana' => $this->request->getPost('laharana'),
+                          'plof'       => $this->request->getPost('plof'),
+                          'lot' => $this->request->getPost('lot'),
+                          // 'mpanao_saisi' => $this->request->getPost('mpanao_saisi'),
+                      );
+                      }
+                    }
+                    $data = $model->saveCode($data1);
+                   echo json_encode($data);
+          }
     }
 
     public function update()

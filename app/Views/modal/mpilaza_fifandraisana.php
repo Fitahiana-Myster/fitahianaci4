@@ -15,7 +15,7 @@
             <input type="text" name="cin" class="form-control" id="cin">
           </div>
           <div class="form-group col-md-3">
-            <label>Anarana sy Fanampiny:</label>
+            <label>Anarana:</label>
             <input type="text" name="nom" class="form-control" id="nom">
           </div>
           <div class="form-group col-md-3">

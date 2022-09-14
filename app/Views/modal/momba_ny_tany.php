@@ -39,7 +39,7 @@
               </div>
           </div><br>
               <!-- Ambatolampy tsimaafotsy -->
-          <div class="row"  style="display: none;" id="Ambatolampy"><hr>
+          <div class="row Ambatolampy"  style="display: none;" id=""><hr>
               <div class="form-check col-md-3">
                 <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
                 <label class="form-check-label" for="flexCheckDefault">Latsakan'ny 20 ara</label>
@@ -54,7 +54,7 @@
           </div>
 
           <!-- Ambatomirahavavy -->
-      <div class="row" style="display: none;" id="Ambatomirahavavy"><hr>
+      <div class="row Ambatomirahavavy" style="display: none;" id=""><hr>
           <div class="form-check col-md-3">
             <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
             <label class="form-check-label" for="flexCheckDefault">Tanimbary,Tanim-boly</label>
@@ -73,7 +73,7 @@
       </div>
 
         <!-- Amboanana -->
-      <div class="row"  style="display: none;" id="Amboanana"><hr>
+      <div class="row Amboanana"  style="display: none;" id=""><hr>
           <div class="form-check col-md-2">
             <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
             <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -120,7 +120,7 @@
       </div>
 
       <!-- Ambohimandry -->
-  <div class="row" style="display: none;" id="Ambohimandry"><hr>
+  <div class="row Ambohimandry" style="display: none;" id=""><hr>
       <div class="form-check col-md-2">
         <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
         <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -135,7 +135,7 @@
   </div>
 
   <!-- Ambohimiadana -->
-<div class="row" style="display: none;" id="Ambohimiadana"><hr>
+<div class="row Ambohimiadana" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -170,7 +170,7 @@
 </div>
 
 <!-- Ambohitrambo -->
-<div class="row" style="display: none;" id="Ambohitrambo"><hr>
+<div class="row Ambohitrambo" style="display: none;" id=""><hr>
 <div class="form-check col-md-2">
   <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
   <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -213,7 +213,7 @@
 </div>
 
 <!-- Ambohitromby -->
-<div class="row" style="display: none;" id="Ambohitromby"><hr>
+<div class="row Ambohitromby" style="display: none;" id=""><hr>
 <div class="form-check col-md-2">
   <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
   <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -252,7 +252,7 @@
 </div>
 
 <!-- Ampahimanga -->
-<div class="row" style="display: none;" id="Ampahimanga"><hr>
+<div class="row Ampahimanga" style="display: none;" id=""><hr>
 <div class="form-check col-md-3">
   <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
   <label class="form-check-label" for="flexCheckDefault">Tanimbary sy Tanimboly</label>
@@ -267,7 +267,7 @@
 </div>
 
 <!-- Ampanotokana style="display: none;"-->
-<div class="row" style="display: none;" id="Ampanotokana"><hr>
+<div class="row Ampanotokana" style="display: none;" id=""><hr>
 <div class="form-check col-md-2">
   <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
   <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -294,14 +294,14 @@
 </div>
 
 <!-- Andramasina style="display: none;"-->
-<div class="row" style="display: none;" id="Andramasina"><hr>
+<div class="row Andramasina" style="display: none;" id=""><hr>
 <div class="form-group" style="margin-bottom: 10px;">
   <input type="text" name="zava_misy" class="form-control" id='zava_misy' placeholder="Zava-misy">
 </div><hr>
 </div>
 
 <!-- Antanetibe Anativolo style="display: none;"-->
-<div class="row" style="display: none;" id="Antanetibe_a"><hr>
+<div class="row Antanetibe_a" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanety</label>
@@ -316,7 +316,7 @@
 </div>
 
 <!-- Antanetibe Mahazaza style="display: none;"-->
-<div class="row" style="display: none;" id="Antanetibe_m"><hr>
+<div class="row Antanetibe_m" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -355,7 +355,7 @@
 </div>
 
 <!-- Antsahafilo style="display: none;"-->
-<div class="row" style="display: none;" id="Antsahafilo"><hr>
+<div class="row Antsahafilo" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -386,7 +386,7 @@
 </div>
 
 <!-- Arivonimamo 1 style="display: none;"-->
-<div class="row" style="display: none;" id="Arivonimamo_1"><hr>
+<div class="row Arivonimamo_1" style="display: none;" id=""><hr>
   <div class="form-check col-md-3">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimboly fanodina sy fanondrana</label>
@@ -432,14 +432,14 @@
 </div>
 
 <!-- Avaratsena style="display: none;"-->
-<div class="row" style="display: none;" id="Avaratsena"><hr>
+<div class="row Avaratsena" style="display: none;" id=""><hr>
   <div class="form-group col-md-2" style="margin-bottom: 10px;">
     <input type="text" name="zava_misy" class="form-control" id='zava_misy' placeholder="Zava-misy">
   </div><hr>
 </div>
 
 <!-- Betatao style="display: none;"-->
-<div class="row" style="display: none;" id="Betatao"><hr>
+<div class="row Betatao" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -466,7 +466,7 @@
 </div>
 
 <!-- Fihaonana style="display: none;"-->
-<div class="row" style="display: none;" id="Fihaonana"><hr>
+<div class="row Fihaonana" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -501,7 +501,7 @@
 </div>
 
 <!-- Imerintsiatosika style="display: none;"-->
-<div class="row" style="display: none;" id="Imerintsiatosika"><hr>
+<div class="row Imerintsiatosika" style="display: none;" id=""><hr>
   <div class="form-check col-md-1">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Cat 1</label>
@@ -532,7 +532,7 @@
 </div>
 
 <!-- Mahavelona style="display: none;"-->
-<div class="row" style="display: none;" id="Mahavelona"><hr>
+<div class="row Mahavelona" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -555,7 +555,7 @@
 </div>
 
 <!-- Miantso style="display: none;"-->
-<div class="row" style="display: none;" id="Miantso"><hr>
+<div class="row Miantso" style="display: none;" id=""><hr>
   <div class="form-check col-md-2">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimbary</label>
@@ -578,7 +578,7 @@
 </div>
 
 <!-- Morarano style="display: none;"-->
-<div class="row" style="display: none;" id="Morarano"><hr>
+<div class="row Morarano" style="display: none;" id=""><hr>
   <div class="form-check col-md-3">
     <input class="form-check-input" type="checkbox" value="Latsakan'ny 20 ara" id="latsaka_ny_20_ora">
     <label class="form-check-label" for="flexCheckDefault">Tanimboly sy tanikininina</label>

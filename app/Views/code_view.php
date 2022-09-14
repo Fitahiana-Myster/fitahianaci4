@@ -32,7 +32,7 @@
                     <th>laharana</th>
                     <th>plof</th>
                     <th>lot</th>
-                    <th>mpanao_saisi</th>
+                    <!-- <th>mpanao_saisi</th> -->
                     <th>Option</th>
                 </tr>
             </thead>

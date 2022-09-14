@@ -12,7 +12,7 @@ let index = "";
   },
   "columns" : [
     {data:"id_code"},
-    {data:"code2"},
+    {data:"farany"},
     {data:"kaominina"},
     {data:"fokontany"},
     {data:"vohitra"},
@@ -20,12 +20,13 @@ let index = "";
     {data:"laharana"},
     {data:"plof"},
     {data:"lot"},
-    {data:"mpanao_saisi"},
+    // {data:"mpanao_saisi"},
 
     {data: "id_code",
        render: function ( data, type, row, meta ) {
          return '<button data-id="'+ data +'" id="edit" onclick="editCode(event)" class="btn btn-info btn-sm fa fa-pencil" ' +
          '></button> '  +
+         '<button data-id="'+ data +'" id="detail" onclick="detailCode(event)" class="btn btn-success btn-sm fa fa-eye"></button> ' +
          '<button data-id="'+ data +'" id="delete" onclick="deleteCode(event)" class="btn btn-danger btn-sm fa fa-trash"></button>'
        }
     }
@@ -114,7 +115,7 @@ var i=0;
         '<div class="row">' +
           '<div class="form-group col-md-4">' +
             '<label>Laharana:</label>' +
-            '<input type="text" name="cin[]" class="form-control" id="cin">' +
+            '<input type="text" name="cin[]" class="form-control cin" id="cin" maxlength="12" required>' +
           '</div>' +
           '<div class="form-group col-md-4">' +
             '<label>Daty :</label>' +
@@ -245,8 +246,9 @@ $.ajax({
     country_id: country_id
   },
   success: function (data) {
-        $('#fokontany2').html(data);
-    $('#vohitra2').html('<option value="">- Misafidy -</option>');
+        //$('#fokontany2').html(data);
+        //$('#vohitra2').html('<option value="">- Misafidy -</option>');
+        console.log(data);
   }
 });
 }
@@ -274,558 +276,558 @@ $('#kaominina').change(function () {
     }
   });
   var v2 = $('#kaominina').val();
-      if (v2 == "105-02") {
-      $('#Ambatolampy').attr('pk', '1').show();
-      $('#Ambatomirahavavy').attr('pk', '1').hide();
-      $('#Amboanana').attr('pk', '1').hide();
-      $('#Ambohimandry').attr('pk', '1').hide();
-      $('#Ambohimiadana').attr('pk', '1').hide();
-      $('#Ambohitrambo').attr('pk', '1').hide();
-      $('#Ambohitromby').attr('pk', '1').hide();
-      $('#Ampahimanga').attr('pk', '1').hide();
-      $('#Ampanotokana').attr('pk', '1').hide();
-      $('#Andramasina').attr('pk', '1').hide();
-      $('#Antanetibe_a').attr('pk', '1').hide();
-      $('#Antanetibe_m').attr('pk', '1').hide();
-      $('#Antsahafilo').attr('pk', '1').hide();
-      $('#Arivonimamo_1').attr('pk', '1').hide();
-      $('#Arivonimamo_2').attr('pk', '1').hide();
-      $('#Avaratsena').attr('pk', '1').hide();
-      $('#Betatao').attr('pk', '1').hide();
-      $('#Fihaonana').attr('pk', '1').hide();
-      $('#Imerintsiatosika').attr('pk', '1').hide();
-      $('#Mahavelona').attr('pk', '1').hide();
-      $('#Miantso').attr('pk', '1').hide();
-      $('#Morarano').attr('pk', '1').hide();
+      if (v2 == "1") {
+      $('.Ambatolampy').attr('pk', '1').show();
+      $('.Ambatomirahavavy').attr('pk', '1').hide();
+      $('.Amboanana').attr('pk', '1').hide();
+      $('.Ambohimandry').attr('pk', '1').hide();
+      $('.Ambohimiadana').attr('pk', '1').hide();
+      $('.Ambohitrambo').attr('pk', '1').hide();
+      $('.Ambohitromby').attr('pk', '1').hide();
+      $('.Ampahimanga').attr('pk', '1').hide();
+      $('.Ampanotokana').attr('pk', '1').hide();
+      $('.Andramasina').attr('pk', '1').hide();
+      $('.Antanetibe_a').attr('pk', '1').hide();
+      $('.Antanetibe_m').attr('pk', '1').hide();
+      $('.Antsahafilo').attr('pk', '1').hide();
+      $('.Arivonimamo_1').attr('pk', '1').hide();
+      $('.Arivonimamo_2').attr('pk', '1').hide();
+      $('.Avaratsena').attr('pk', '1').hide();
+      $('.Betatao').attr('pk', '1').hide();
+      $('.Fihaonana').attr('pk', '1').hide();
+      $('.Imerintsiatosika').attr('pk', '1').hide();
+      $('.Mahavelona').attr('pk', '1').hide();
+      $('.Miantso').attr('pk', '1').hide();
+      $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-03"){
-        $('#Ambatomirahavavy').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+       else if(v2 == "2"){
+        $('.Ambatomirahavavy').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-04"){
-        $('#Amboanana').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "3"){
+        $('.Amboanana').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-24"){
-        $('#Ambohimandry').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "4"){
+        $('.Ambohimandry').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "106-03"){
-        $('#Ambohimiadana').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "5"){
+        $('.Ambohimiadana').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-09"){
-        $('#Ambohitrambo').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "6"){
+        $('.Ambohitrambo').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "104-01"){
-        $('#Ambohitromby').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "7"){
+        $('.Ambohitromby').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-10"){
-        $('#Ampahimanga').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "8"){
+        $('.Ampahimanga').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "105-08"){
-        $('#Ampanotokana').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "9"){
+        $('.Ampanotokana').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "106-05"){
-        $('#Andramasina').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "22"){
+        $('.Andramasina').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "107-21"){
-        $('#Antanetibe_a').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "11"){
+        $('.Antanetibe_a').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "105-11"){
-        $('#Antanetibe_m').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "10"){
+        $('.Antanetibe_m').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "105-13"){
-        $('#Antsahafilo').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "12"){
+        $('.Antsahafilo').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-13"){
-        $('#Arivonimamo_1').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "13"){
+        $('.Arivonimamo_1').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-14"){
-        $('#Arivonimamo_2').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "14"){
+        $('.Arivonimamo_2').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "105-14"){
-        $('#Avaratsena').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "15"){
+        $('.Avaratsena').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "107-15"){
-        $('#Betatao').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "16"){
+        $('.Betatao').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "104-07"){
-        $('#Fihaonana').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "17"){
+        $('.Fihaonana').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-15"){
-        $('#Imerintsiatosika').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "18"){
+        $('.Imerintsiatosika').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "104-09"){
-        $('#Mahavelona').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "19"){
+        $('.Mahavelona').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "104-11"){
-        $('#Miantso').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Morarano').attr('pk', '1').hide();
+      else if(v2 == "20"){
+        $('.Miantso').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Morarano').attr('pk', '1').hide();
     }
-      else if(v2 == "112-20"){
-        $('#Morarano').attr('pk', '1').show();
-        $('#Ambatolampy').attr('pk', '1').hide();
-        $('#Ambatomirahavavy').attr('pk', '1').hide();
-        $('#Amboanana').attr('pk', '1').hide();
-        $('#Ambohimandry').attr('pk', '1').hide();
-        $('#Ambohimiadana').attr('pk', '1').hide();
-        $('#Ambohitrambo').attr('pk', '1').hide();
-        $('#Ambohitromby').attr('pk', '1').hide();
-        $('#Ampahimanga').attr('pk', '1').hide();
-        $('#Ampanotokana').attr('pk', '1').hide();
-        $('#Andramasina').attr('pk', '1').hide();
-        $('#Antanetibe_a').attr('pk', '1').hide();
-        $('#Antanetibe_m').attr('pk', '1').hide();
-        $('#Antsahafilo').attr('pk', '1').hide();
-        $('#Arivonimamo_1').attr('pk', '1').hide();
-        $('#Arivonimamo_2').attr('pk', '1').hide();
-        $('#Avaratsena').attr('pk', '1').hide();
-        $('#Betatao').attr('pk', '1').hide();
-        $('#Fihaonana').attr('pk', '1').hide();
-        $('#Imerintsiatosika').attr('pk', '1').hide();
-        $('#Mahavelona').attr('pk', '1').hide();
-        $('#Miantso').attr('pk', '1').hide();
+      else if(v2 == "21"){
+        $('.Morarano').attr('pk', '1').show();
+        $('.Ambatolampy').attr('pk', '1').hide();
+        $('.Ambatomirahavavy').attr('pk', '1').hide();
+        $('.Amboanana').attr('pk', '1').hide();
+        $('.Ambohimandry').attr('pk', '1').hide();
+        $('.Ambohimiadana').attr('pk', '1').hide();
+        $('.Ambohitrambo').attr('pk', '1').hide();
+        $('.Ambohitromby').attr('pk', '1').hide();
+        $('.Ampahimanga').attr('pk', '1').hide();
+        $('.Ampanotokana').attr('pk', '1').hide();
+        $('.Andramasina').attr('pk', '1').hide();
+        $('.Antanetibe_a').attr('pk', '1').hide();
+        $('.Antanetibe_m').attr('pk', '1').hide();
+        $('.Antsahafilo').attr('pk', '1').hide();
+        $('.Arivonimamo_1').attr('pk', '1').hide();
+        $('.Arivonimamo_2').attr('pk', '1').hide();
+        $('.Avaratsena').attr('pk', '1').hide();
+        $('.Betatao').attr('pk', '1').hide();
+        $('.Fihaonana').attr('pk', '1').hide();
+        $('.Imerintsiatosika').attr('pk', '1').hide();
+        $('.Mahavelona').attr('pk', '1').hide();
+        $('.Miantso').attr('pk', '1').hide();
     }
 
       else {
-      $('#Ambatolampy').attr('pk', '1').hide();
-      $('#Ambatomirahavavy').attr('pk', '1').hide();
-      $('#Amboanana').attr('pk', '1').hide();
-      $('#Ambohimandry').attr('pk', '1').hide();
-      $('#Ambohimiadana').attr('pk', '1').hide();
-      $('#Ambohitrambo').attr('pk', '1').hide();
-      $('#Ambohitromby').attr('pk', '1').hide();
-      $('#Ampahimanga').attr('pk', '1').hide();
-      $('#Ampanotokana').attr('pk', '1').hide();
-      $('#Andramasina').attr('pk', '1').hide();
-      $('#Antanetibe_a').attr('pk', '1').hide();
-      $('#Antanetibe_m').attr('pk', '1').hide();
-      $('#Antsahafilo').attr('pk', '1').hide();
-      $('#Arivonimamo_1').attr('pk', '1').hide();
-      $('#Arivonimamo_2').attr('pk', '1').hide();
-      $('#Avaratsena').attr('pk', '1').hide();
-      $('#Betatao').attr('pk', '1').hide();
-      $('#Fihaonana').attr('pk', '1').hide();
-      $('#Imerintsiatosika').attr('pk', '1').hide();
-      $('#Mahavelona').attr('pk', '1').hide();
-      $('#Miantso').attr('pk', '1').hide();
-      $('#Morarano').attr('pk', '1').hide();
+      $('.Ambatolampy').attr('pk', '1').hide();
+      $('.Ambatomirahavavy').attr('pk', '1').hide();
+      $('.Amboanana').attr('pk', '1').hide();
+      $('.Ambohimandry').attr('pk', '1').hide();
+      $('.Ambohimiadana').attr('pk', '1').hide();
+      $('.Ambohitrambo').attr('pk', '1').hide();
+      $('.Ambohitromby').attr('pk', '1').hide();
+      $('.Ampahimanga').attr('pk', '1').hide();
+      $('.Ampanotokana').attr('pk', '1').hide();
+      $('.Andramasina').attr('pk', '1').hide();
+      $('.Antanetibe_a').attr('pk', '1').hide();
+      $('.Antanetibe_m').attr('pk', '1').hide();
+      $('.Antsahafilo').attr('pk', '1').hide();
+      $('.Arivonimamo_1').attr('pk', '1').hide();
+      $('.Arivonimamo_2').attr('pk', '1').hide();
+      $('.Avaratsena').attr('pk', '1').hide();
+      $('.Betatao').attr('pk', '1').hide();
+      $('.Fihaonana').attr('pk', '1').hide();
+      $('.Imerintsiatosika').attr('pk', '1').hide();
+      $('.Mahavelona').attr('pk', '1').hide();
+      $('.Miantso').attr('pk', '1').hide();
+      $('.Morarano').attr('pk', '1').hide();
       }
 
 });
@@ -853,7 +855,28 @@ $('#kaominina2').change(function () {
   });
 });
 
+$('#laharana_tokan_trano').keyup(function(event){
+     if(document.getElementById("laharana_tokan_trano").value!="") {
+        document.getElementById("laharana").disabled = true;
+     } else {
+         document.getElementById("laharana").disabled = false;
+     }
+ });
 
+ $('#laharana').keyup(function(event){
+      if(document.getElementById("laharana").value!="") {
+         document.getElementById("laharana_tokan_trano").disabled = true;
+      } else {
+          document.getElementById("laharana_tokan_trano").disabled = false;
+      }
+  });
+  $('.cin').keyup(function(e)
+                                {
+  if (/\D/g.test(this.value))
+  {
+    this.value = this.value.replace(/\D/g, "");
+  }
+});
    //Save code
       $('#btn_save').on('click',function(){
           var kaominina = $('#kaominina').val();
@@ -877,17 +900,22 @@ $('#kaominina2').change(function () {
                 lot:lot
               },
               success: function(data){
-                  $('[name="id_code"]').val("");
-                  $('[name="kaominina"]').val("");
-                  $('[name="fokontany"]').val("");
-                  $('[name="vohitra"]').val("");
-                  $('[name="laharana_tokan_trano"]').val("");
-                  $('[name="laharana"]').val("");
-                  $('[name="plof"]').val("");
-                  $('[name="lot"]').val("");
-                  // $('#add2').modal('hide');
-                  var oTable = $('#show_data').dataTable();
-                  oTable.api().ajax.reload();
+                  if (data=="Efa misy io code parcel io") {
+                      alert(data);
+                  }
+                  else {
+                    $('[name="id_code"]').val("");
+                    $('[name="kaominina"]').val("");
+                    $('[name="fokontany"]').val("");
+                    $('[name="vohitra"]').val("");
+                    $('[name="laharana_tokan_trano"]').val("");
+                    $('[name="laharana"]').val("");
+                    $('[name="plof"]').val("");
+                    $('[name="lot"]').val("");
+                    $('#add2').modal('hide');
+                    var oTable = $('#show_data').dataTable();
+                    oTable.api().ajax.reload();
+                  }
               }
           });
           return false;
@@ -948,4 +976,33 @@ $('#kaominina2').change(function () {
                    });
                    return false;
                });
+
+      $('.save_tompony').on('click',function(){
+             // Get form
+       // var form = $('#tompony_add')[0];
+       var data = new FormData(this);
+       console.log(data);
+       // var nom = $('#nom').val();
+      //  alert("ok");
+      //  $('#tompony_modal').modal('hide');
+      // $('#show_data').DataTable().ajax.reload(null, false);
+       // $.ajax({
+       //       type: "POST",
+       //       enctype: 'multipart/form-data',
+       //       url: "/code_controller/tompony_add",
+       //       data: data,
+       //       processData: false,
+       //       contentType: false,
+       //       cache: false,
+       //       timeout: 600000,
+       //       success: function (data) {
+       //          alert("mety be");
+       //           // $("#result").text(data);
+       //           // console.log("SUCCESS : ", data);
+       //           // $("#btnSubmit").prop("disabled", false);
+       //
+       //       }
+       //   });
+      });
+
 });

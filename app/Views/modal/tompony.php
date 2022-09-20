@@ -1,8 +1,8 @@
 <!-- First modal dialog -->
+<!-- <form> -->
 <div class="modal fade modal-xl" id="tompony_modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1"  data-bs-backdrop="static" data-bs-keyboard="false">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-  <form enctype="multipart/form-data" id="tompony_add">
       <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Momba ny tompon-tany: </h5>
           <a class="btn btn-success btn-sm  fa fa-plus" id="consort"></a>
@@ -61,9 +61,9 @@
       <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-add2" >Précédent</button>
           <button type="button" class="btn btn-primary momba_ny_tany" >Suivant</button>
-          <button type="submit" class="btn btn-danger save_tompony" >save</button>
+          <button type="submit" class="btn btn-danger" id="save_tompony" >save</button>
       </div>
     </div>
   </div>
 </div>
-</form>
+<!-- </form> -->

@@ -20,7 +20,15 @@ class Code_controller extends Controller
             $id_code = $this->request->getVar('id_code');
             $model = new Code_model();
             $data=$model->check_data($id_code)->getResult();
-            echo json_encode($data);
+            $data_code = (array)$data[0]; // alaina avy amty data ty ny codefk
+            $code_kaominina = $data_code['kaominina'];
+            $codefkt = $data_code['fokontany']; // otro2 zay, lasa ah aloha ar
+            $liste_fokotany =  $model->liste_fkt($code_kaominina);
+            echo json_encode([
+              'data_code' => $data_code,
+              'liste_fokotany' => $liste_fokotany,
+              'liste_vohitra' => $model->liste_vhtr($codefkt, $code_kaominina)
+            ]);
         }
 
 

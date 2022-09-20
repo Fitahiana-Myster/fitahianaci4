@@ -79,6 +79,7 @@ class Code_model extends Model
     {
         $builder = $this->db->table('kaominina');
         $builder->orderBy('nom', 'ASC');
+        $builder->where('nom !=', '');
         return $builder->get();
     }
     #fokontany
@@ -89,7 +90,7 @@ class Code_model extends Model
        $valiny=$query->get();
        $output = '<option value="">- Misafidy -</option>';
         foreach ($valiny->getResult() as $row) {
-            $output .=  '<option value="' . $row->id . '">' . $row->codefkt . '-' . $row->nom . '</option>';
+            $output .=  '<option value="' . $row->id . '" >' . $row->codefkt . '-' . $row->nom . '</option>';
         }
         return $output;
 		}

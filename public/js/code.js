@@ -34,8 +34,10 @@ let index = "";
   ],
     order: [[0, 'desc']]
 });
-
-
+// $('#show_data tbody').on( 'click', 'button', function () {
+//         var data = table.row( $(this).parents('tr') ).data();
+//         alert( "The ID is: "+ data[ 3 ] );
+//     } );
 function editCode(e){
   var id_code=(e.target.getAttribute('data-id'));
   $.ajax({
@@ -45,21 +47,64 @@ function editCode(e){
       data : {
         id_code:id_code
       },
-      success: function(data){
-        var i;
-        for(i=0; i<data.length; i++){
-          $('#id_code2').val(data[i].id_code);
-          $('#kaominina2').val(data[i].kaominina);
-          $('#fokontany2').val(data[i].fokontany);
-          $('#vohitra2').val(data[i].vohitra);
-          $('#laharana_tokan_trano2').val(data[i].laharana_tokan_trano);
-          $('#laharana2').val(data[i].laharana);
-          $('#plof2').val(data[i].plof);
-          $('#lot2').val(data[i].lot);
-          $('#mpanao_saisi2').val(data[i].mpanao_saisi);
-        }
-      $('#editModal').modal('show');
-      }
+      success: function(response){
+
+// dia tahaka izay le liste :)
+// minoa ah fa misy azonlah ampiasaina zay idée zay
+// ok merci bcp lesy eeeh
+// ndao ar mou :)) mazoto e
+          const data = response.data_code;
+
+          // mameno ny liste fokontany aloha
+        $('#fokontany2').html(response.liste_fokotany);
+        $('#vohitra2').html(response.liste_vohitra);// otzzao
+
+          // avy eo izay vao mameno ilay select
+          // mila asina temps de pause kely (timeout)
+          // ny antony mb efa feno tsra ilay select vao mande ilay fanasina valeur
+          // afaka tapahananlah amzay le anydesk raha ohatra ka
+          // de raha vohitra koa zani de otr'zay ihn ny fanaovana azy?
+          // oui, otrzay ian, avy dia apio vohaitra ary amlay model raha ilaina liste dia feno eto
+
+          setTimeout(function () {
+            $('#id_code2').val(data.id_code);
+            $('#kaominina2').val(data.kaominina);
+            $('#fokontany2').val(data.fokontany);
+            //$('select#fokontany2 option[value='+data.fokontany+']').prop('selected',true); // ity mants version tsy tena clean code :)
+            // grave be lesy le code teo teo
+            // courage e
+            $('#vohitra2').val(data.vohitra);
+            $('#laharana_tokan_trano2').val(data.laharana_tokan_trano);
+            $('#laharana2').val(data.laharana);
+            $('#plof2').val(data.plof);
+            $('#lot2').val(data.lot);
+            $('#mpanao_saisi2').val(data.mpanao_saisi);
+
+            $('#editModal').modal('show');
+          }, 500);
+
+
+        // ny olana miantso ajax hafa elah mameno anle select
+        // dia mandrapa feno aniny anefa efa lancer le code aiza io ajax io ?
+        // tokony oe vita zay ajax zay vao mande ty aja iray ty
+
+        //vety2 fa atoroko anao zao ihn
+
+
+
+      //   for(i=0; i<data.length; i++){
+      //     $('#id_code2').val(data[i].id_code);
+      //     $('#kaominina2').val(data[i].kaominina);
+      //     $('select#fokontany2').val(data[i].fokontany);
+      //     $('#vohitra2').val(data[i].vohitra);
+      //     $('#laharana_tokan_trano2').val(data[i].laharana_tokan_trano);
+      //     $('#laharana2').val(data[i].laharana);
+      //     $('#plof2').val(data[i].plof);
+      //     $('#lot2').val(data[i].lot);
+      //     $('#mpanao_saisi2').val(data[i].mpanao_saisi);
+      //   }
+      // $('#editModal').modal('show');
+     }
   });
   return false;
 }
@@ -234,25 +279,38 @@ var i=0;
   }
 });
 
-// edit mampiseo fokontany2
-$('#kaominina2').change(function () {
-var country_id = $('#kaominina2').val();
-if (country_id != '')
-{
-$.ajax({
-  url: "/code_controller/liste_fkt",
-  method: "POST",
-  data: {
-    country_id: country_id
-  },
-  success: function (data) {
-        //$('#fokontany2').html(data);
-        //$('#vohitra2').html('<option value="">- Misafidy -</option>');
-        console.log(data);
-  }
-});
-}
-});
+//io ilay izy
+// ok ok, tokony oe vita ty vao lancena ilay edit code
+// de aona zani no atao , fa very mhtsmanko za io
+
+// rems ary, misy zavatra azo atao ka :)
+// ataovy model iray ity : "/code_controller/liste_fkt sy ilay check_data
+
+// $('#editModal').on('shown.bs.modal', test);
+//
+// function test(){
+//   var country_id = $('#kaominina2').val();
+//   //console.log(country_id);
+//
+//   if (country_id != '')
+//   {
+//     $.ajax({
+//       url: "/code_controller/liste_fkt",
+//       method: "POST",
+//       data: {
+//         country_id: country_id
+//       },
+//       success: function (data) {
+//             $('#fokontany2').html(data);
+//             $('#vohitra2').html('<option value="">- Misafidy -</option>');
+//             // console.log(data);
+//       }
+//     })
+//   }
+// };
+//
+// // edit mampiseo fokontany2
+// $('#kaominina2').change(test);
 
 // mampiseo liste vohitra
 $('#kaominina').change(function () {
@@ -977,13 +1035,14 @@ $('#laharana_tokan_trano').keyup(function(event){
                    return false;
                });
 
-      $('.save_tompony').on('click',function(){
+      $('#save_tompony').on('click',function(){
              // Get form
-       // var form = $('#tompony_add')[0];
-       var data = new FormData(this);
-       console.log(data);
-       // var nom = $('#nom').val();
-      //  alert("ok");
+       // var form = $('#tompony_modal')[0];
+       // var data = new FormData(document.getElementById("my-awesome-dropzone"));
+       // var data = new FormData(document.getElementById("tompony_modal"));
+       // console.log(data);
+       var nom = $('#nom').val();
+       alert(nom);
       //  $('#tompony_modal').modal('hide');
       // $('#show_data').DataTable().ajax.reload(null, false);
        // $.ajax({
